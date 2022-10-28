@@ -1,0 +1,31 @@
+{
+  "models": [
+    {
+      "edges": [
+        {
+          "id": "a715515e-3b14-478d-bb47-58e482045487",
+          "name": "e_StartBrowser",
+          "sourceVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+          "targetVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30"
+        }
+      ],
+      "generator": "random(edge_coverage(100))",
+      "id": "b62f3fef-3e2a-4239-ac95-7be5c7c2680d",
+      "name": "PetClinic",
+      "startElementId": "a715515e-3b14-478d-bb47-58e482045487",
+      "vertices": [
+        {
+          "id": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+          "name": "v_HomePage",
+          "properties": {
+            "x": 283,
+            "y": 159
+          },
+          "sharedState": "HomePage"
+        }
+      ]
+    }
+  ],
+  "selectedModelIndex": 0,
+  "selectedElementId": null
+}
