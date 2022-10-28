@@ -1,7 +1,6 @@
 package org.swe550.modelimplementations;
 
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.Faker;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
