@@ -53,9 +53,8 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void e_SearchKeyword() {
-        String searchKeyword = new Faker().letterify("iphone");
         $("[data-testid=suggestion]").click();
-        $("[data-testid=suggestion]").setValue(searchKeyword);
+        $("[data-testid=suggestion]").setValue("iphone");
         $("[data-testid=search-icon]").click();
     }
 
