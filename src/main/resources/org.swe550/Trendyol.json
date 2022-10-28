@@ -1,0 +1,353 @@
+{
+  "models": [
+    {
+      "edges": [],
+      "generator": "random(edge_coverage(100))",
+      "id": "72df729a-47c3-4811-876d-ceb4105f0227",
+      "name": "SearchKeyword",
+      "startElementId": "",
+      "vertices": [
+        {
+          "id": "11662fa1-5140-4257-ae94-346865b70cb9",
+          "name": "v_SearchKeyword",
+          "properties": {
+            "x": -235.16749910166521,
+            "y": 4.808094053869532
+          },
+          "sharedState": "SearchKeyword"
+        }
+      ],
+      "actions": [
+        ""
+      ],
+      "editor": {
+        "elements": {
+          "nodes": [
+            {
+              "data": {
+                "id": "11662fa1-5140-4257-ae94-346865b70cb9",
+                "name": "v_SearchKeyword",
+                "color": "LightSalmon",
+                "sharedState": "SearchKeyword"
+              },
+              "position": {
+                "x": -235.16749910166521,
+                "y": 4.808094053869532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            }
+          ]
+        },
+        "style": [
+          {
+            "selector": "core",
+            "style": {
+              "active-bg-size": "0px"
+            }
+          },
+          {
+            "selector": "node",
+            "style": {
+              "label": "data(name)",
+              "text-wrap": "wrap",
+              "text-valign": "center",
+              "text-halign": "center",
+              "shape": "roundrectangle",
+              "width": "label",
+              "height": "label",
+              "color": "rgb(0,0,0)",
+              "background-color": "data(color)",
+              "line-color": "data(color)",
+              "padding": "10px"
+            }
+          },
+          {
+            "selector": "edge",
+            "style": {
+              "label": "data(name)",
+              "text-wrap": "wrap",
+              "curve-style": "bezier",
+              "text-rotation": "autorotate",
+              "target-arrow-shape": "triangle",
+              "width": "4px",
+              "line-color": "data(color)",
+              "target-arrow-color": "data(color)",
+              "background-color": "data(color)"
+            }
+          },
+          {
+            "selector": ":loop",
+            "style": {
+              "curve-style": "unbundled-bezier",
+              "control-point-step-size": "60px"
+            }
+          },
+          {
+            "selector": ":selected",
+            "style": {
+              "border-width": "4px",
+              "border-color": "rgb(0,0,0)",
+              "line-color": "rgb(0,0,0)",
+              "target-arrow-color": "rgb(0,0,0)"
+            }
+          }
+        ],
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+          "x": 764.7234287992396,
+          "y": 335.87852559025424
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+          "name": "canvas"
+        }
+      }
+    },
+    {
+      "edges": [
+        {
+          "id": "a715515e-3b14-478d-bb47-58e482045487",
+          "name": "e_StartBrowser",
+          "sourceVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+          "targetVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30"
+        },
+        {
+          "id": "0662dfec-fb95-4788-adc5-7e7190b77c96",
+          "name": "e_SearchKeyword",
+          "sourceVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+          "targetVertexId": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6"
+        },
+        {
+          "id": "abb2822b-3e8d-4aa9-bc2c-21d7a6dbdc60",
+          "name": "e_HomePage",
+          "sourceVertexId": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
+          "targetVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30"
+        }
+      ],
+      "generator": "random(edge_coverage(100))",
+      "id": "b62f3fef-3e2a-4239-ac95-7be5c7c2680d",
+      "name": "Trendyol",
+      "startElementId": "a715515e-3b14-478d-bb47-58e482045487",
+      "vertices": [
+        {
+          "id": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+          "name": "v_HomePage",
+          "properties": {
+            "x": 283,
+            "y": 159
+          },
+          "sharedState": "HomePage"
+        },
+        {
+          "id": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
+          "name": "v_SearchKeyword",
+          "properties": {
+            "x": 469.2557445022225,
+            "y": 1.2707655803540496
+          },
+          "sharedState": "SearchKeyword"
+        }
+      ],
+      "editor": {
+        "elements": {
+          "edges": [
+            {
+              "data": {
+                "id": "abb2822b-3e8d-4aa9-bc2c-21d7a6dbdc60",
+                "name": "e_HomePage",
+                "source": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
+                "target": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+                "color": "LightSteelBlue"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "a715515e-3b14-478d-bb47-58e482045487",
+                "name": "e_StartBrowser",
+                "source": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+                "target": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+                "color": "LightGreen"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "0662dfec-fb95-4788-adc5-7e7190b77c96",
+                "name": "e_SearchKeyword",
+                "source": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+                "target": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
+                "color": "LightSteelBlue"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            }
+          ],
+          "nodes": [
+            {
+              "data": {
+                "id": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
+                "name": "v_HomePage",
+                "color": "LightSalmon",
+                "sharedState": "HomePage"
+              },
+              "position": {
+                "x": 283,
+                "y": 159
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
+                "name": "v_SearchKeyword",
+                "color": "LightSalmon",
+                "sharedState": "SearchKeyword"
+              },
+              "position": {
+                "x": 469.2557445022225,
+                "y": 1.2707655803540496
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            }
+          ]
+        },
+        "style": [
+          {
+            "selector": "core",
+            "style": {
+              "active-bg-size": "0px"
+            }
+          },
+          {
+            "selector": "node",
+            "style": {
+              "label": "data(name)",
+              "text-wrap": "wrap",
+              "text-valign": "center",
+              "text-halign": "center",
+              "shape": "roundrectangle",
+              "width": "label",
+              "height": "label",
+              "color": "rgb(0,0,0)",
+              "background-color": "data(color)",
+              "line-color": "data(color)",
+              "padding": "10px"
+            }
+          },
+          {
+            "selector": "edge",
+            "style": {
+              "label": "data(name)",
+              "text-wrap": "wrap",
+              "curve-style": "bezier",
+              "text-rotation": "autorotate",
+              "target-arrow-shape": "triangle",
+              "width": "4px",
+              "line-color": "data(color)",
+              "target-arrow-color": "data(color)",
+              "background-color": "data(color)"
+            }
+          },
+          {
+            "selector": ":loop",
+            "style": {
+              "curve-style": "unbundled-bezier",
+              "control-point-step-size": "60px"
+            }
+          },
+          {
+            "selector": ":selected",
+            "style": {
+              "border-width": "4px",
+              "border-color": "rgb(0,0,0)",
+              "line-color": "rgb(0,0,0)",
+              "target-arrow-color": "rgb(0,0,0)"
+            }
+          }
+        ],
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+          "x": 102.0292543698218,
+          "y": 229.96440241265287
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+          "name": "canvas"
+        }
+      },
+      "actions": [
+        ""
+      ]
+    }
+  ],
+  "selectedModelIndex": 1,
+  "selectedElementId": null
+}
