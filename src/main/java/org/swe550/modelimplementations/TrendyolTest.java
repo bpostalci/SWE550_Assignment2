@@ -1,5 +1,6 @@
 package org.swe550.modelimplementations;
 
+import com.codeborne.selenide.Condition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
@@ -10,8 +11,7 @@ import org.swe550.util.SearchKeywordUtil;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.browser;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 @GraphWalker(value = "random(edge_coverage(100))", start = "e_StartBrowser")
 public class TrendyolTest extends ExecutionContext implements Trendyol {
@@ -45,14 +45,22 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void v_SearchKeyword() {
-
+        $(".srch-aggrgtn-cntnr").shouldBe(Condition.visible);
     }
 
     @Override
     public void e_SearchKeyword() {
-        PopUpCloseUtil.closePopUp();
-
         SearchKeywordUtil.search("iphone");
+    }
+
+    @Override
+    public void e_GoToBasket() {
+        $(".account-basket").click();
+    }
+
+    @Override
+    public void v_GoToBasket() {
+        $(".pb-empty-basket").shouldBe(visible);
     }
 
     @Override

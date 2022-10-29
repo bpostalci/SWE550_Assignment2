@@ -13,20 +13,31 @@ import static com.codeborne.selenide.Selenide.$;
 public class SearchKeywordTest extends ExecutionContext implements SearchKeyword {
     @Override
     public void v_SearchKeyword() {
-        PopUpCloseUtil.closePopUp();
-        $(".dscrptn").shouldBe(Condition.visible);
     }
 
     @Override
     public void e_SearchTooLongString() {
-        PopUpCloseUtil.closePopUp();
         SearchKeywordUtil.search("samsungsamsungsamsungsamsungsamsungsamsungsamsungsamsung");
     }
 
     @Override
     public void v_SearchTooLongString() {
-        PopUpCloseUtil.closePopUp();
         $("[data-testid=suggestion]").shouldNotHave(Condition.value("samsungsamsungsamsungsamsungsamsungsamsungsamsungsamsung"));
         $("[data-testid=suggestion]").shouldHave(Condition.value("samsungsamsungsamsungsamsungsamsungsamsungsamsungs"));
+    }
+
+    @Override
+    public void e_SearchKeyword() {
+    }
+
+    @Override
+    public void v_AddItemToFavorites() {
+        $("#login-register").shouldBe(Condition.visible);
+    }
+
+    @Override
+    public void e_AddItemToFavorites() {
+        SearchKeywordUtil.search("iphone");
+        $(".fvrt-btn-wrppr").lastChild().click();
     }
 }
