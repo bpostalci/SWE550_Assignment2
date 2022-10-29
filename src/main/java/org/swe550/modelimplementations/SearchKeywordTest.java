@@ -5,6 +5,7 @@ import com.codeborne.selenide.Condition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.SearchKeyword;
+import org.swe550.util.OverlayCloseUtil;
 import org.swe550.util.SearchKeywordUtil;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -17,12 +18,12 @@ public class SearchKeywordTest extends ExecutionContext implements SearchKeyword
     }
 
     @Override
-    public void e_SearchTooLongString() {
+    public void e_SearchInvalidKeyword() {
         SearchKeywordUtil.search("samsungsamsungsamsungsamsungsamsungsamsungsamsungsamsung");
     }
 
     @Override
-    public void v_SearchTooLongString() {
+    public void v_SearchInvalidKeyword() {
         $$("[data-testid=suggestion]").shouldHave(CollectionCondition.sizeLessThanOrEqual(50));
     }
 
@@ -38,6 +39,7 @@ public class SearchKeywordTest extends ExecutionContext implements SearchKeyword
     @Override
     public void e_AddItemToFavorites() {
         SearchKeywordUtil.search("iphone");
+        OverlayCloseUtil.closeOverlay();
         $(".fvrt-btn-wrppr").lastChild().click();
     }
 }

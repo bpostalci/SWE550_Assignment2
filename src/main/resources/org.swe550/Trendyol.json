@@ -29,17 +29,17 @@
       ],
       "generator": "random(edge_coverage(100))",
       "id": "30967497-ee13-4dda-ac61-c496d2052acd",
-      "name": "SearchTooLongString",
+      "name": "StringInputs",
       "startElementId": "",
       "vertices": [
         {
           "id": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
-          "name": "v_SearchTooLongString",
+          "name": "v_SearchInvalidKeyword",
           "properties": {
             "x": 388.87074338955375,
             "y": 332.87961208985746
           },
-          "sharedState": "SearchTooLongString"
+          "sharedState": "SearchInvalidKeyword"
         }
       ],
       "editor": {
@@ -51,7 +51,7 @@
                 "name": "e_LongString3",
                 "source": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
                 "target": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -72,7 +72,7 @@
                 "name": "e_LongString2",
                 "source": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
                 "target": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -93,7 +93,7 @@
                 "name": "e_LongString1",
                 "source": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
                 "target": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -111,10 +111,10 @@
             {
               "data": {
                 "id": "62d07e28-898f-45e0-b9ff-1a226a72b939",
-                "name": "e_NewEdge",
+                "name": "e_EmptyString",
                 "source": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
                 "target": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -134,9 +134,9 @@
             {
               "data": {
                 "id": "f72a9f6a-4132-4341-8a1c-d19890a5f967",
-                "name": "v_SearchTooLongString",
-                "color": "LightSalmon",
-                "sharedState": "SearchTooLongString"
+                "name": "v_SearchInvalidKeyword",
+                "color": "LightGreen",
+                "sharedState": "SearchInvalidKeyword"
               },
               "position": {
                 "x": 388.87074338955375,
@@ -273,7 +273,7 @@
                 "name": "e_GoToBasket",
                 "source": "94915696-ae6b-4a50-b16d-58577425b34a",
                 "target": "740e235d-172a-4e6f-ad00-ba2b4d73d775",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -294,7 +294,7 @@
                 "name": "e_DiscountCoupons",
                 "source": "740e235d-172a-4e6f-ad00-ba2b4d73d775",
                 "target": "94915696-ae6b-4a50-b16d-58577425b34a",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -315,7 +315,7 @@
               "data": {
                 "id": "94915696-ae6b-4a50-b16d-58577425b34a",
                 "name": "v_DiscountCoupons",
-                "color": "LightSalmon",
+                "color": "LightGreen",
                 "sharedState": "DiscountCoupons"
               },
               "position": {
@@ -335,7 +335,7 @@
               "data": {
                 "id": "740e235d-172a-4e6f-ad00-ba2b4d73d775",
                 "name": "v_GoToBasket",
-                "color": "LightSalmon",
+                "color": "LightGreen",
                 "sharedState": "GoToBasket"
               },
               "position": {
@@ -429,7 +429,7 @@
       "edges": [
         {
           "id": "c7e7fec3-0b5e-4219-a613-07d962d4de04",
-          "name": "e_SearchTooLongString",
+          "name": "e_SearchInvalidKeyword",
           "sourceVertexId": "11662fa1-5140-4257-ae94-346865b70cb9",
           "targetVertexId": "31a2ceb3-6a39-4b58-8669-a7850b4c509f"
         },
@@ -468,12 +468,12 @@
         },
         {
           "id": "31a2ceb3-6a39-4b58-8669-a7850b4c509f",
-          "name": "v_SearchTooLongString",
+          "name": "v_SearchInvalidKeyword",
           "properties": {
             "x": -28.34602461333168,
             "y": -151.82253727196616
           },
-          "sharedState": "SearchTooLongString"
+          "sharedState": "SearchInvalidKeyword"
         },
         {
           "id": "7c135346-650c-4816-a72c-20500445dc55",
@@ -497,7 +497,7 @@
                 "name": "e_SearchKeyword",
                 "source": "7c135346-650c-4816-a72c-20500445dc55",
                 "target": "11662fa1-5140-4257-ae94-346865b70cb9",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -518,7 +518,7 @@
                 "name": "e_SearchKeyword",
                 "source": "31a2ceb3-6a39-4b58-8669-a7850b4c509f",
                 "target": "11662fa1-5140-4257-ae94-346865b70cb9",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -539,7 +539,7 @@
                 "name": "e_AddItemToFavorites",
                 "source": "11662fa1-5140-4257-ae94-346865b70cb9",
                 "target": "7c135346-650c-4816-a72c-20500445dc55",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -557,10 +557,10 @@
             {
               "data": {
                 "id": "c7e7fec3-0b5e-4219-a613-07d962d4de04",
-                "name": "e_SearchTooLongString",
+                "name": "e_SearchInvalidKeywords",
                 "source": "11662fa1-5140-4257-ae94-346865b70cb9",
                 "target": "31a2ceb3-6a39-4b58-8669-a7850b4c509f",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -579,14 +579,14 @@
           "nodes": [
             {
               "data": {
-                "id": "7c135346-650c-4816-a72c-20500445dc55",
-                "name": "v_AddItemToFavorites",
-                "color": "LightSalmon",
-                "sharedState": "AddItemToFavorites"
+                "id": "11662fa1-5140-4257-ae94-346865b70cb9",
+                "name": "v_SearchKeyword",
+                "color": "LightGreen",
+                "sharedState": "SearchKeyword"
               },
               "position": {
-                "x": -345.6262479365761,
-                "y": -148.9670908654085
+                "x": -202.15745806067696,
+                "y": 70.82817613584615
               },
               "group": "nodes",
               "removed": false,
@@ -600,9 +600,9 @@
             {
               "data": {
                 "id": "31a2ceb3-6a39-4b58-8669-a7850b4c509f",
-                "name": "v_SearchTooLongString",
-                "color": "LightSalmon",
-                "sharedState": "SearchTooLongString"
+                "name": "v_SearchInvalidKeyword",
+                "color": "LightGreen",
+                "sharedState": "SearchInvalidKeyword"
               },
               "position": {
                 "x": -28.34602461333168,
@@ -619,14 +619,14 @@
             },
             {
               "data": {
-                "id": "11662fa1-5140-4257-ae94-346865b70cb9",
-                "name": "v_SearchKeyword",
-                "color": "LightSalmon",
-                "sharedState": "SearchKeyword"
+                "id": "7c135346-650c-4816-a72c-20500445dc55",
+                "name": "v_AddItemToFavorites",
+                "color": "LightGreen",
+                "sharedState": "AddItemToFavorites"
               },
               "position": {
-                "x": -202.15745806067696,
-                "y": 70.82817613584615
+                "x": -345.6262479365761,
+                "y": -148.9670908654085
               },
               "group": "nodes",
               "removed": false,
@@ -786,7 +786,7 @@
                 "name": "e_HomePage",
                 "source": "0811fa3e-541f-4ceb-8515-65afb82197e9",
                 "target": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -807,7 +807,7 @@
                 "name": "e_GoToBasket",
                 "source": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
                 "target": "0811fa3e-541f-4ceb-8515-65afb82197e9",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -828,7 +828,7 @@
                 "name": "e_HomePage",
                 "source": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
                 "target": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -849,7 +849,7 @@
                 "name": "e_SearchKeyword",
                 "source": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
                 "target": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
-                "color": "LightSteelBlue"
+                "color": "LightGreen"
               },
               "position": {
                 "x": 0,
@@ -891,7 +891,7 @@
               "data": {
                 "id": "0811fa3e-541f-4ceb-8515-65afb82197e9",
                 "name": "v_GoToBasket",
-                "color": "LightSalmon",
+                "color": "LightGreen",
                 "sharedState": "GoToBasket"
               },
               "position": {
@@ -911,7 +911,7 @@
               "data": {
                 "id": "fea7f132-ff7b-4a88-95d9-06a2b73c6db6",
                 "name": "v_SearchKeyword",
-                "color": "LightSalmon",
+                "color": "LightGreen",
                 "sharedState": "SearchKeyword"
               },
               "position": {
@@ -931,7 +931,7 @@
               "data": {
                 "id": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
                 "name": "v_HomePage",
-                "color": "LightSalmon",
+                "color": "LightGreen",
                 "sharedState": "HomePage"
               },
               "position": {
@@ -1025,6 +1025,6 @@
       ]
     }
   ],
-  "selectedModelIndex": 0,
-  "selectedElementId": null
+  "selectedModelIndex": 2,
+  "selectedElementId": "c7e7fec3-0b5e-4219-a613-07d962d4de04"
 }

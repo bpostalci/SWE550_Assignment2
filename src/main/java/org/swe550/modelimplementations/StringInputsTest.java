@@ -3,12 +3,13 @@ package org.swe550.modelimplementations;
 import com.codeborne.selenide.CollectionCondition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
-import org.swe550.SearchTooLongString;
+import org.swe550.StringInputs;
 import org.swe550.util.SearchKeywordUtil;
+
 import static com.codeborne.selenide.Selenide.$$;
 
 @GraphWalker(value = "random(edge_coverage(100))")
-public class SearchTooLongStringTest extends ExecutionContext implements SearchTooLongString {
+public class StringInputsTest extends ExecutionContext implements StringInputs {
     @Override
     public void e_LongString2() {
         SearchKeywordUtil.search("aasafdsaflds;aaasafdsaflds;aaasafdsaflds;aaasafdsaflds;aaasafdsaflds;a" +
@@ -24,7 +25,7 @@ public class SearchTooLongStringTest extends ExecutionContext implements SearchT
     }
 
     @Override
-    public void v_SearchTooLongString() {
+    public void v_SearchInvalidKeyword() {
         $$("[data-testid=suggestion]").shouldHave(CollectionCondition.sizeLessThanOrEqual(50));
     }
 

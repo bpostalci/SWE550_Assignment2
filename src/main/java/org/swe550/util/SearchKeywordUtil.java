@@ -9,10 +9,7 @@ public class SearchKeywordUtil {
     public static void search(String keyword) {
 
         $("[data-testid=suggestion]").setValue(keyword);
-        SelenideElement overlay = $(".overlay");
-        if (overlay.exists() && overlay.isDisplayed()) {
-            Selenide.executeJavaScript("document.getElementsByClassName('overlay')[0].style.visibility='hidden'");
-        }
+        OverlayCloseUtil.closeOverlay();
         $("[data-testid=search-icon]").click();
     }
 }

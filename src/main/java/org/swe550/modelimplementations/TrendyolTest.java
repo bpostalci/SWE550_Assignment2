@@ -4,6 +4,7 @@ import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.Trendyol;
+import org.swe550.util.OverlayCloseUtil;
 import org.swe550.util.PopUpCloseUtil;
 import org.swe550.util.SearchKeywordUtil;
 
@@ -39,7 +40,6 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void e_HomePage() {
-        open("https://www.trendyol.com/");
     }
 
     @Override
@@ -48,17 +48,18 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void e_SearchKeyword() {
-        SearchKeywordUtil.search("iphone");
+        SearchKeywordUtil.search("samsung");
     }
 
     @Override
     public void e_GoToBasket() {
+        OverlayCloseUtil.closeOverlay();
         $(".account-basket").click();
     }
 
     @Override
     public void v_GoToBasket() {
-        $(".pb-empty-basket").shouldBe(visible);
+        $("#basket-app-container").shouldBe(visible);
     }
 
     @Override
