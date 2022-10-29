@@ -1,10 +1,11 @@
 package org.swe550.modelimplementations;
 
-import com.codeborne.selenide.SelenideElement;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.Trendyol;
+import org.swe550.util.PopUpCloseUtil;
+import org.swe550.util.SearchKeywordUtil;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -17,10 +18,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     @Override
     public void v_HomePage() {
 
-        SelenideElement closePopup = $(".modal-content .modal-close");
-        if (closePopup.exists()) {
-            closePopup.click();
-        }
+        PopUpCloseUtil.closePopUp();
 
 
         $("#navigation-wrapper").shouldHave(
@@ -52,9 +50,9 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void e_SearchKeyword() {
-        $("[data-testid=suggestion]").click();
-        $("[data-testid=suggestion]").setValue("iphone");
-        $("[data-testid=search-icon]").click();
+        PopUpCloseUtil.closePopUp();
+
+        SearchKeywordUtil.search("iphone");
     }
 
     @Override
