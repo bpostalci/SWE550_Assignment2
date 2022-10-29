@@ -1,6 +1,5 @@
 package org.swe550.modelimplementations;
 
-import com.codeborne.selenide.Condition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
@@ -45,7 +44,6 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void v_SearchKeyword() {
-        $(".srch-aggrgtn-cntnr").shouldBe(Condition.visible);
     }
 
     @Override
