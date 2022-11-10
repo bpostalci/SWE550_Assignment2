@@ -5,12 +5,9 @@ import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.Trendyol;
-import org.swe550.util.LoginHelper;
-import org.swe550.util.CloseUtil;
-import org.swe550.util.SearchKeywordUtil;
+import org.swe550.util.*;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -68,36 +65,23 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     }
 
     @Override
-    public void v_DiscountCoupons() {
-
-    }
-
-    @Override
     public void e_AddItemToFavorites() {
-        SearchKeywordUtil.search("iphone");
-        CloseUtil.closeOverlay();
-        $(".fvrt-btn-wrppr").lastChild().click();
+        FavoriteItemUtil.favoriteAnItem("dell monitor");
     }
 
     @Override
     public void v_AddToFavorites() {
-
+        FavoriteItemUtil.validateFavoriteBox();
     }
 
     @Override
-    public void e_DiscountCoupons() {
-
+    public void e_AddToBasket() {
+        BasketUtil.addItemToBasket("iphone");
     }
 
     @Override
-    public void e_GoToBasket() {
-        CloseUtil.closeOverlay();
-        $(".account-basket").click();
-    }
-
-    @Override
-    public void v_GoToBasket() {
-        $("#basket-app-container").shouldBe(visible);
+    public void v_AddToBasket() {
+        BasketUtil.validateBasket();
     }
 
     @BeforeExecution

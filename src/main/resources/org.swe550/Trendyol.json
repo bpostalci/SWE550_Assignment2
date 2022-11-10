@@ -65,24 +65,13 @@
       "vertices": [
         {
           "id": "740e235d-172a-4e6f-ad00-ba2b4d73d775",
-          "name": "v_GoToBasket",
-          "sharedState": "GoToBasket",
+          "name": "v_AddToBasket",
+          "sharedState": "AddToBasket",
           "actions": [],
           "requirements": [],
           "properties": {
             "x": 248.44277691258026,
             "y": 138.04789464794612
-          }
-        },
-        {
-          "id": "94915696-ae6b-4a50-b16d-58577425b34a",
-          "name": "v_DiscountCoupons",
-          "sharedState": "DiscountCoupons",
-          "actions": [],
-          "requirements": [],
-          "properties": {
-            "x": 401.45222454487606,
-            "y": -13.961491235119013
           }
         },
         {
@@ -92,30 +81,12 @@
           "actions": [],
           "requirements": [],
           "properties": {
-            "x": 89.6262819342579,
-            "y": -7.228361737043425
+            "x": 67.47719586337507,
+            "y": -104.6843404489279
           }
         }
       ],
       "edges": [
-        {
-          "id": "6757bce6-8cd6-44e6-9400-2b70aa6600b7",
-          "name": "e_DiscountCoupons",
-          "actions": [],
-          "requirements": [],
-          "properties": [],
-          "sourceVertexId": "740e235d-172a-4e6f-ad00-ba2b4d73d775",
-          "targetVertexId": "94915696-ae6b-4a50-b16d-58577425b34a"
-        },
-        {
-          "id": "aeb0927b-1586-478f-8bc4-15d9e088e0fc",
-          "name": "e_GoToBasket",
-          "actions": [],
-          "requirements": [],
-          "properties": [],
-          "sourceVertexId": "94915696-ae6b-4a50-b16d-58577425b34a",
-          "targetVertexId": "740e235d-172a-4e6f-ad00-ba2b4d73d775"
-        },
         {
           "id": "b7e73b3d-1548-45d6-9ee2-6bc0a6910e39",
           "name": "e_RemoveItemFromBasket",
@@ -216,8 +187,8 @@
         },
         {
           "id": "0811fa3e-541f-4ceb-8515-65afb82197e9",
-          "name": "v_GoToBasket",
-          "sharedState": "GoToBasket",
+          "name": "v_AddToBasket",
+          "sharedState": "AddToBasket",
           "actions": [],
           "requirements": [],
           "properties": {
@@ -232,18 +203,8 @@
           "actions": [],
           "requirements": [],
           "properties": {
-            "x": 610.2632363566104,
-            "y": 241.21672789611335
-          }
-        },
-        {
-          "id": "a173e2fc-9272-4152-a3e4-0b2e6a48c86e",
-          "name": "v_DiscountCoupons",
-          "actions": [],
-          "requirements": [],
-          "properties": {
-            "x": 38.62591771260531,
-            "y": 318.0249144779775
+            "x": 646.4618289412455,
+            "y": 159.43472242712284
           }
         }
       ],
@@ -277,7 +238,7 @@
         },
         {
           "id": "0b41f79b-dcba-418c-823d-7d65a81834c6",
-          "name": "e_GoToBasket",
+          "name": "e_AddToBasket",
           "actions": [],
           "requirements": [],
           "properties": [],
@@ -309,24 +270,6 @@
           "requirements": [],
           "properties": [],
           "sourceVertexId": "87149863-7c0f-4514-a661-1bd1477752ea",
-          "targetVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30"
-        },
-        {
-          "id": "1882de57-0d6d-44b5-b546-fc02b993946f",
-          "name": "e_DiscountCoupons",
-          "actions": [],
-          "requirements": [],
-          "properties": [],
-          "sourceVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30",
-          "targetVertexId": "a173e2fc-9272-4152-a3e4-0b2e6a48c86e"
-        },
-        {
-          "id": "41adbe0a-7aec-4f8b-8669-4f570f118811",
-          "name": "e_HomePage",
-          "actions": [],
-          "requirements": [],
-          "properties": [],
-          "sourceVertexId": "a173e2fc-9272-4152-a3e4-0b2e6a48c86e",
           "targetVertexId": "f94fdc6b-08a2-4ed2-943d-5f8cb16a8f30"
         }
       ],
