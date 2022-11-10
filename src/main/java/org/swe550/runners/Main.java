@@ -6,7 +6,7 @@ import org.graphwalker.java.test.TestExecutor;
 import org.graphwalker.websocket.WebSocketServer;
 import org.swe550.modelimplementations.BasketTest;
 import org.swe550.modelimplementations.SearchKeywordTest;
-import org.swe550.modelimplementations.StringInputsTest;
+import org.swe550.modelimplementations.SearchVariousKeywordsTest;
 import org.swe550.modelimplementations.TrendyolTest;
 
 
@@ -18,7 +18,7 @@ public class Main {
                 TrendyolTest.class,
                 SearchKeywordTest.class,
                 BasketTest.class,
-                StringInputsTest.class
+                SearchVariousKeywordsTest.class
         );
 
         WebSocketServer server = new WebSocketServer(8887, executor.getMachine());

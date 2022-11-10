@@ -18,7 +18,7 @@ public class LoginHelper {
         $("#login-email").setValue(email);
         $("#login-password-input").setValue(password);
         $(".submit").click();
-        new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(5));
+        new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(10));
 
         LoginHelper.authenticated = true;
     }

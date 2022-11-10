@@ -3,13 +3,13 @@ package org.swe550.modelimplementations;
 import com.codeborne.selenide.CollectionCondition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
-import org.swe550.StringInputs;
+import org.swe550.SearchVariousKeywords;
 import org.swe550.util.SearchKeywordUtil;
 
 import static com.codeborne.selenide.Selenide.$$;
 
-@GraphWalker(value = "random(edge_coverage(100))")
-public class StringInputsTest extends ExecutionContext implements StringInputs {
+@GraphWalker(value = "quick_random(edge_coverage(100))")
+public class SearchVariousKeywordsTest extends ExecutionContext implements SearchVariousKeywords {
     @Override
     public void e_LongString2() {
         SearchKeywordUtil.search("aasafdsaflds;aaasafdsaflds;aaasafdsaflds;aaasafdsaflds;aaasafdsaflds;a" +

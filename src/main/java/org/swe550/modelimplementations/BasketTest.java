@@ -9,7 +9,7 @@ import org.swe550.util.CloseUtil;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-@GraphWalker(value = "random(edge_coverage(100))")
+@GraphWalker(value = "quick_random(edge_coverage(100))")
 public class BasketTest extends ExecutionContext implements Basket {
     @Override
     public void e_GoToBasket() {
@@ -31,5 +31,15 @@ public class BasketTest extends ExecutionContext implements Basket {
     public void e_DiscountCoupons() {
         CloseUtil.closeOverlay();
         $(".header-top>ul>li>a").click();
+    }
+
+    @Override
+    public void v_RemoveFromBasket() {
+
+    }
+
+    @Override
+    public void e_RemoveItemFromBasket() {
+
     }
 }

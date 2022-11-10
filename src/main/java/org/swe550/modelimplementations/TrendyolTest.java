@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.*;
 
-@GraphWalker(value = "random(edge_coverage(100))", start = "e_StartBrowser")
+@GraphWalker(value = "quick_random(edge_coverage(100))", start = "e_StartBrowserAndLogin")
 public class TrendyolTest extends ExecutionContext implements Trendyol {
     @Override
     public void v_HomePage() {
@@ -54,18 +54,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     }
 
     @Override
-    public void e_GoToBasket() {
-        CloseUtil.closeOverlay();
-        $(".account-basket").click();
-    }
-
-    @Override
-    public void v_GoToBasket() {
-        $("#basket-app-container").shouldBe(visible);
-    }
-
-    @Override
-    public void e_StartBrowser() {
+    public void e_StartBrowserAndLogin() {
         open("https://www.trendyol.com/");
         CloseUtil.closePopUp();
         if (!LoginHelper.isAuthenticated()) {
@@ -76,6 +65,39 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
             }
 
         }
+    }
+
+    @Override
+    public void v_DiscountCoupons() {
+
+    }
+
+    @Override
+    public void e_AddItemToFavorites() {
+        SearchKeywordUtil.search("iphone");
+        CloseUtil.closeOverlay();
+        $(".fvrt-btn-wrppr").lastChild().click();
+    }
+
+    @Override
+    public void v_AddToFavorites() {
+
+    }
+
+    @Override
+    public void e_DiscountCoupons() {
+
+    }
+
+    @Override
+    public void e_GoToBasket() {
+        CloseUtil.closeOverlay();
+        $(".account-basket").click();
+    }
+
+    @Override
+    public void v_GoToBasket() {
+        $("#basket-app-container").shouldBe(visible);
     }
 
     @BeforeExecution
