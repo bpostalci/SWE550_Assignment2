@@ -5,8 +5,8 @@ import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.BeforeExecution;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.Trendyol;
-import org.swe550.util.OverlayCloseUtil;
-import org.swe550.util.PopUpCloseUtil;
+import org.swe550.util.LoginHelper;
+import org.swe550.util.CloseUtil;
 import org.swe550.util.SearchKeywordUtil;
 
 import static com.codeborne.selenide.Condition.text;
@@ -19,7 +19,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     @Override
     public void v_HomePage() {
 
-        PopUpCloseUtil.closePopUp();
+        CloseUtil.closePopUp();
 
 
         $("#navigation-wrapper").shouldHave(
@@ -55,7 +55,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void e_GoToBasket() {
-        OverlayCloseUtil.closeOverlay();
+        CloseUtil.closeOverlay();
         $(".account-basket").click();
     }
 
@@ -67,6 +67,15 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     @Override
     public void e_StartBrowser() {
         open("https://www.trendyol.com/");
+        CloseUtil.closePopUp();
+        if (!LoginHelper.isAuthenticated()) {
+            try {
+                LoginHelper.login();
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+
+        }
     }
 
     @BeforeExecution

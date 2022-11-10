@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.Basket;
-import org.swe550.util.OverlayCloseUtil;
+import org.swe550.util.CloseUtil;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class BasketTest extends ExecutionContext implements Basket {
     @Override
     public void e_GoToBasket() {
-        OverlayCloseUtil.closeOverlay();
+        CloseUtil.closeOverlay();
         $(".account-basket").click();
     }
 
@@ -24,12 +24,12 @@ public class BasketTest extends ExecutionContext implements Basket {
 
     @Override
     public void v_DiscountCoupons() {
-        $("#login-register").shouldBe(Condition.visible);
+//        $("#login-register").shouldBe(Condition.visible);
     }
 
     @Override
     public void e_DiscountCoupons() {
-        OverlayCloseUtil.closeOverlay();
+        CloseUtil.closeOverlay();
         $(".header-top>ul>li>a").click();
     }
 }

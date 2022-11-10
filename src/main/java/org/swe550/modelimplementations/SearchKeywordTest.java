@@ -5,7 +5,7 @@ import com.codeborne.selenide.Condition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
 import org.swe550.SearchKeyword;
-import org.swe550.util.OverlayCloseUtil;
+import org.swe550.util.CloseUtil;
 import org.swe550.util.SearchKeywordUtil;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -33,13 +33,13 @@ public class SearchKeywordTest extends ExecutionContext implements SearchKeyword
 
     @Override
     public void v_AddItemToFavorites() {
-        $("#login-register").shouldBe(Condition.visible);
+//        $("#login-register").shouldBe(Condition.visible);
     }
 
     @Override
     public void e_AddItemToFavorites() {
         SearchKeywordUtil.search("iphone");
-        OverlayCloseUtil.closeOverlay();
+        CloseUtil.closeOverlay();
         $(".fvrt-btn-wrppr").lastChild().click();
     }
 }
