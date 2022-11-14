@@ -38,23 +38,19 @@ public class BasketAddFavoritesUtil {
             $(".account-basket").click();
             $(".pb-basket-item").shouldBe(Condition.exist);
 
-            SelenideElement tooltipBtn = $(".tooltip-content>button");
-            if (tooltipBtn.exists()) {
-                tooltipBtn.click();
-            }
+            CloseUtil.closeTooltip();
         }
     }
 
     public static void removeFromBasketAddToFavorites() {
         if (!BasketAddFavoritesUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
+            CloseUtil.closeTooltip();
 
             $(".account-basket").click();
             $(".pb-basket-item").shouldBe(Condition.exist);
-            SelenideElement tooltipBtn = $(".tooltip-content>button");
-            if (tooltipBtn.exists()) {
-                tooltipBtn.click();
-            }
+
+            CloseUtil.closeTooltip();
 
             $(".i-trash").click();
             new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
@@ -69,6 +65,7 @@ public class BasketAddFavoritesUtil {
         if (!BasketAddFavoritesUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
             CloseUtil.closeOverlay();
+            CloseUtil.closeTooltip();
 
             $(".account-favorites").click();
             $(".p-card-chldrn-cntnr").shouldBe(exist);

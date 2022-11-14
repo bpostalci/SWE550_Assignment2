@@ -19,6 +19,8 @@ public class BasketUtil {
         if (!BasketUtil.executed) {
             SearchKeywordUtil.search(keyword);
             CloseUtil.closeOverlay();
+            CloseUtil.closeTooltip();
+
             $(".fvrt-btn-wrppr").lastChild().click();
 
             $(".account-favorites").click();
@@ -30,16 +32,14 @@ public class BasketUtil {
     public static void validateBasket() {
         if (!BasketUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
+            CloseUtil.closeTooltip();
 
             $(".account-basket").click();
             new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
                     .until(ExpectedConditions.visibilityOf($(".i-bagg")));
             $(".pb-basket-item").shouldBe(Condition.exist);
 
-            SelenideElement tooltipBtn = $(".tooltip-content>button");
-            if (tooltipBtn.exists()) {
-                tooltipBtn.click();
-            }
+            CloseUtil.closeTooltip();
         }
     }
 
@@ -47,13 +47,12 @@ public class BasketUtil {
     public static void removeItemFromBasket() {
         if (!BasketUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
+            CloseUtil.closeTooltip();
 
             $(".account-basket").click();
             $(".pb-basket-item").shouldBe(Condition.exist);
-            SelenideElement tooltipBtn = $(".tooltip-content>button");
-            if (tooltipBtn.exists()) {
-                tooltipBtn.click();
-            }
+
+            CloseUtil.closeTooltip();
 
             $(".i-trash").click();
             new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
@@ -66,15 +65,13 @@ public class BasketUtil {
     public static void validateRemovedItem() {
         if (!BasketUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
+            CloseUtil.closeTooltip();
 
             $(".pb-basket-item").shouldNotBe(Condition.exist);
-            new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
+            new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(5))
                     .until(ExpectedConditions.visibilityOf($(".account-favorites")));
             $(".account-favorites").click();
-            SelenideElement unFvrtElement = $(".ufvrt-btn-wrppr");
-            if (unFvrtElement.exists()) {
-                unFvrtElement.click();
-            }
+            $(".ufvrt-btn-wrppr").click();
 
             BasketUtil.executed = true;
         }

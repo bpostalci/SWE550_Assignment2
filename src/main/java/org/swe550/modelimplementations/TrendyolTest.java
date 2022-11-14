@@ -64,7 +64,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
 
     @Override
     public void e_SearchKeyword() {
-        SearchKeywordUtil.search("samsung");
+        SearchKeywordUtil.search("kitap");
     }
 
     // ADD TO FAVORITES
@@ -91,7 +91,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     // ADD TO BASKET
     @Override
     public void e_AddToBasket() {
-        BasketUtil.addItemToBasket("iphone");
+        BasketUtil.addItemToBasket("kahve");
     }
 
     @Override
@@ -112,7 +112,7 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     // ADD NEW ITEM
     @Override
     public void e_AddNewItemToBasket() {
-        BasketAddFavoritesUtil.addNewItemToBasket("sony");
+        BasketAddFavoritesUtil.addNewItemToBasket("cetvel");
     }
 
     @Override
