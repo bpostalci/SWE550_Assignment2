@@ -1,6 +1,5 @@
 package org.swe550.util;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +17,7 @@ public class LoginHelper {
         $("#login-email").setValue(email);
         $("#login-password-input").setValue(password);
         $(".submit").click();
-        new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(10));
+        new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(15));
 
         LoginHelper.authenticated = true;
     }
