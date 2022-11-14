@@ -13,6 +13,21 @@ import static com.codeborne.selenide.Selenide.*;
 
 @GraphWalker(value = "quick_random(edge_coverage(100))", start = "e_StartBrowserAndLogin")
 public class TrendyolTest extends ExecutionContext implements Trendyol {
+
+    @Override
+    public void e_StartBrowserAndLogin() {
+        open("https://www.trendyol.com/");
+        CloseUtil.closePopUp();
+        if (!LoginHelper.isAuthenticated()) {
+            try {
+                LoginHelper.login();
+            } catch (Exception e) {
+                System.err.println(e);
+            }
+
+        }
+    }
+
     @Override
     public void v_HomePage() {
 
@@ -36,9 +51,11 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
         $("#logo").shouldBe(visible);
     }
 
+
     @Override
     public void e_HomePage() {
     }
+
 
     @Override
     public void v_SearchKeyword() {
@@ -50,30 +67,28 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
         SearchKeywordUtil.search("samsung");
     }
 
-    @Override
-    public void e_StartBrowserAndLogin() {
-        open("https://www.trendyol.com/");
-        CloseUtil.closePopUp();
-        if (!LoginHelper.isAuthenticated()) {
-            try {
-                LoginHelper.login();
-            } catch (Exception e) {
-                System.err.println(e);
-            }
-
-        }
-    }
-
+    // ADD TO FAVORITES
     @Override
     public void e_AddItemToFavorites() {
-        FavoriteItemUtil.favoriteAnItem("dell monitor");
+        FavoriteUtil.favoriteAnItem("dell monitor");
     }
 
     @Override
     public void v_AddToFavorites() {
-        FavoriteItemUtil.validateFavoriteBox();
+        FavoriteUtil.validateFavoriteBox();
     }
 
+    @Override
+    public void e_RemoveFromFavorites() {
+        FavoriteUtil.removeFromFavorites();
+    }
+
+    @Override
+    public void v_RemoveFromFavorites() {
+        FavoriteUtil.validateRemovedFavorite();
+    }
+
+    // ADD TO BASKET
     @Override
     public void e_AddToBasket() {
         BasketUtil.addItemToBasket("iphone");
@@ -82,6 +97,37 @@ public class TrendyolTest extends ExecutionContext implements Trendyol {
     @Override
     public void v_AddToBasket() {
         BasketUtil.validateBasket();
+    }
+
+    @Override
+    public void e_RemoveItemFromBasket() {
+        BasketUtil.removeItemFromBasket();
+    }
+
+    @Override
+    public void v_RemoveFromBasket() {
+        BasketUtil.validateRemovedItem();
+    }
+
+    // ADD NEW ITEM
+    @Override
+    public void e_AddNewItemToBasket() {
+        BasketAddFavoritesUtil.addNewItemToBasket("sony");
+    }
+
+    @Override
+    public void v_AddNewItemToBasket() {
+        BasketAddFavoritesUtil.validateNewItemAddedToBasket();
+    }
+
+    @Override
+    public void e_RemoveFromBasketAddToFavorites() {
+        BasketAddFavoritesUtil.removeFromBasketAddToFavorites();
+    }
+
+    @Override
+    public void v_RemoveFromBasketAddToFavorites() {
+        BasketAddFavoritesUtil.validateAddToFavorites();
     }
 
     @BeforeExecution

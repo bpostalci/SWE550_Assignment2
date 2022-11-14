@@ -10,30 +10,32 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$;
 
-public class BasketUtil {
+public class BasketAddFavoritesUtil {
     private static boolean executed = false;
 
-    public static void addItemToBasket(String keyword) {
-        if (!BasketUtil.executed) {
+    public static void addNewItemToBasket(String keyword) {
+        if (!BasketAddFavoritesUtil.executed) {
+            CloseUtil.closeOnBoardingOverlay();
+
             SearchKeywordUtil.search(keyword);
             CloseUtil.closeOverlay();
             $(".fvrt-btn-wrppr").lastChild().click();
-
             $(".account-favorites").click();
+            new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
+                    .until(ExpectedConditions.visibilityOf($(".basket-button")));
+
             $(".basket-button").click();
         }
     }
 
-
-    public static void validateBasket() {
-        if (!BasketUtil.executed) {
+    public static void validateNewItemAddedToBasket() {
+        if (!BasketAddFavoritesUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
 
             $(".account-basket").click();
-            new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
-                    .until(ExpectedConditions.visibilityOf($(".i-bagg")));
             $(".pb-basket-item").shouldBe(Condition.exist);
 
             SelenideElement tooltipBtn = $(".tooltip-content>button");
@@ -43,9 +45,8 @@ public class BasketUtil {
         }
     }
 
-
-    public static void removeItemFromBasket() {
-        if (!BasketUtil.executed) {
+    public static void removeFromBasketAddToFavorites() {
+        if (!BasketAddFavoritesUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
 
             $(".account-basket").click();
@@ -58,25 +59,22 @@ public class BasketUtil {
             $(".i-trash").click();
             new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
                     .until(ExpectedConditions.visibilityOf($(".pb-item-remove-confirmation-modal")));
-            WebElement silButton = Selenide.webdriver().object().findElement(By.xpath("//button[text()='Sil']"));
+            WebElement silButton =
+                    Selenide.webdriver().object().findElement(By.xpath("//button[text()='Sil ve Favorilere Ekle']"));
             silButton.click();
         }
     }
 
-    public static void validateRemovedItem() {
-        if (!BasketUtil.executed) {
+    public static void validateAddToFavorites() {
+        if (!BasketAddFavoritesUtil.executed) {
             CloseUtil.closeOnBoardingOverlay();
+            CloseUtil.closeOverlay();
 
-            $(".pb-basket-item").shouldNotBe(Condition.exist);
-            new WebDriverWait(Selenide.webdriver().object(), Duration.ofSeconds(60))
-                    .until(ExpectedConditions.visibilityOf($(".account-favorites")));
             $(".account-favorites").click();
-            SelenideElement unFvrtElement = $(".ufvrt-btn-wrppr");
-            if (unFvrtElement.exists()) {
-                unFvrtElement.click();
-            }
+            $(".p-card-chldrn-cntnr").shouldBe(exist);
+            $(".ufvrt-btn-wrppr").click();
 
-            BasketUtil.executed = true;
+            BasketAddFavoritesUtil.executed = true;
         }
     }
 }

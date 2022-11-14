@@ -1,5 +1,7 @@
 package org.swe550.util;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class SearchKeywordUtil {
@@ -7,6 +9,14 @@ public class SearchKeywordUtil {
 
         $("[data-testid=suggestion]").setValue(keyword);
         CloseUtil.closeOverlay();
-        $("[data-testid=search-icon]").click();
+
+        SelenideElement searchIconElement = $("[data-testid=search-icon]");
+        SelenideElement popupElement = $(".popup");
+        if (popupElement.exists() && popupElement.isDisplayed()) {
+            searchIconElement.click();
+        }
+        CloseUtil.closeOverlay();
+
+        searchIconElement.click();
     }
 }

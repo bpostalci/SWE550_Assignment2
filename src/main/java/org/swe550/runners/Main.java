@@ -4,10 +4,7 @@ import org.graphwalker.java.test.Executor;
 import org.graphwalker.java.test.Result;
 import org.graphwalker.java.test.TestExecutor;
 import org.graphwalker.websocket.WebSocketServer;
-import org.swe550.modelimplementations.BasketTest;
-import org.swe550.modelimplementations.SearchKeywordTest;
-import org.swe550.modelimplementations.SearchVariousKeywordsTest;
-import org.swe550.modelimplementations.TrendyolTest;
+import org.swe550.modelimplementations.*;
 
 
 import java.io.IOException;
@@ -17,8 +14,7 @@ public class Main {
         Executor executor = new TestExecutor(
                 TrendyolTest.class,
                 SearchKeywordTest.class,
-                BasketTest.class,
-                SearchVariousKeywordsTest.class
+                ValidateSearchBarTest.class
         );
 
         WebSocketServer server = new WebSocketServer(8887, executor.getMachine());

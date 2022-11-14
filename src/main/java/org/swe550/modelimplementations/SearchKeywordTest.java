@@ -19,12 +19,13 @@ public class SearchKeywordTest extends ExecutionContext implements SearchKeyword
     }
 
     @Override
+    public void v_ValidateSearchBar() {
+        $$("[data-testid=suggestion]").shouldHave(CollectionCondition.sizeLessThanOrEqual(50));
+    }
+
+    @Override
     public void e_SearchAKeyword() {
         SearchKeywordUtil.search("samsungsamsungsamsungsamsungsamsungsamsungsamsungsamsung");
     }
 
-    @Override
-    public void v_SearchVariousKeywords() {
-        $$("[data-testid=suggestion]").shouldHave(CollectionCondition.sizeLessThanOrEqual(50));
-    }
 }

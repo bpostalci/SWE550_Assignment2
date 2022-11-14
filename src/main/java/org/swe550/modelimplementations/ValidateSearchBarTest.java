@@ -3,13 +3,13 @@ package org.swe550.modelimplementations;
 import com.codeborne.selenide.CollectionCondition;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
-import org.swe550.SearchVariousKeywords;
+import org.swe550.ValidateSearchBar;
 import org.swe550.util.SearchKeywordUtil;
 
 import static com.codeborne.selenide.Selenide.$$;
 
 @GraphWalker(value = "quick_random(edge_coverage(100))")
-public class SearchVariousKeywordsTest extends ExecutionContext implements SearchVariousKeywords {
+public class ValidateSearchBarTest extends ExecutionContext implements ValidateSearchBar {
     @Override
     public void e_LongString2() {
         SearchKeywordUtil.search("aasafdsaflds;aaasafdsaflds;aaasafdsaflds;aaasafdsaflds;aaasafdsaflds;a" +
@@ -25,20 +25,8 @@ public class SearchVariousKeywordsTest extends ExecutionContext implements Searc
     }
 
     @Override
-    public void v_SearchInvalidKeyword() {
+    public void v_ValidateSearchBar() {
         $$("[data-testid=suggestion]").shouldHave(CollectionCondition.sizeLessThanOrEqual(50));
-    }
-
-    @Override
-    public void e_LongString3() {
-        SearchKeywordUtil.search("!@#$$%$#@^%$#^%$#%$#!@%^%#^%$" +
-                "!@#$$%$#@^%$#^%$#%$#!@%^%#^%$" +
-                "!@#$$%$#@^%$#^%$#%$#!@%^%#^%$" +
-                "!@#$$%$#@^%$#^%$#%$#!@%^%#^%$" +
-                "!@#$$%$#@^%$#^%$#%$#!@%^%#^%$" +
-                "!@#$$%$#@^%$#^%$#%$#!@%^%#^%$" +
-                "!@#$$%$#@^%$#^%$#%$#!@%^%#^%$");
-
     }
 
     @Override

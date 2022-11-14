@@ -26,4 +26,11 @@ public class CloseUtil {
             Selenide.executeJavaScript("document.getElementsByClassName('overlay')[0].style.visibility='hidden'");
         }
     }
+
+    public static void closeOnBoardingOverlay(){
+        SelenideElement overlay = $(".onboarding-overlay");
+        if (overlay.exists() && overlay.isDisplayed()) {
+            Selenide.executeJavaScript("document.getElementsByClassName('onboarding-overlay')[0].style.visibility='hidden'");
+        }
+    }
 }
